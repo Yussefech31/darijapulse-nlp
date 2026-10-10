@@ -1,0 +1,103 @@
+{
+  "dataset_name": "Moroccan Sentiment Analysis Corpus (MSAC)",
+  "total_dataset_size": 1998,
+  "train_samples": 1598,
+  "test_samples": 400,
+  "onnx_speedup_vs_pytorch": 0.98,
+  "model_size_reduction_pct": 74.2,
+  "arabizi_evaluation": {
+    "sample_size": 16,
+    "tfidf_accuracy": 0.5625,
+    "int8_onnx_accuracy": 0.5
+  },
+  "models": [
+    {
+      "model_name": "INT8 Quantized ONNX",
+      "accuracy": 0.7875,
+      "macro_f1": 0.7872,
+      "precision": 0.7891,
+      "recall": 0.7875,
+      "pos_f1": 0.7952,
+      "neg_f1": 0.7792,
+      "sample_size": 400,
+      "latency_ms_per_sample": 0.218,
+      "confusion_matrix": [
+        [
+          150,
+          50
+        ],
+        [
+          35,
+          165
+        ]
+      ],
+      "model_size_mb": 0.32
+    },
+    {
+      "model_name": "FP32 ONNX Runtime",
+      "accuracy": 0.7875,
+      "macro_f1": 0.7873,
+      "precision": 0.7887,
+      "recall": 0.7875,
+      "pos_f1": 0.7942,
+      "neg_f1": 0.7804,
+      "sample_size": 400,
+      "latency_ms_per_sample": 0.655,
+      "confusion_matrix": [
+        [
+          151,
+          49
+        ],
+        [
+          36,
+          164
+        ]
+      ],
+      "model_size_mb": 1.26
+    },
+    {
+      "model_name": "PyTorch BiLSTM (Attention)",
+      "accuracy": 0.7875,
+      "macro_f1": 0.7873,
+      "precision": 0.7887,
+      "recall": 0.7875,
+      "pos_f1": 0.7942,
+      "neg_f1": 0.7804,
+      "sample_size": 400,
+      "latency_ms_per_sample": 0.213,
+      "confusion_matrix": [
+        [
+          151,
+          49
+        ],
+        [
+          36,
+          164
+        ]
+      ],
+      "model_size_mb": 1.26
+    },
+    {
+      "model_name": "TF-IDF + Logistic Regression",
+      "accuracy": 0.835,
+      "macro_f1": 0.8349,
+      "precision": 0.8362,
+      "recall": 0.835,
+      "pos_f1": 0.8299,
+      "neg_f1": 0.8398,
+      "sample_size": 400,
+      "latency_ms_per_sample": 0.136,
+      "confusion_matrix": [
+        [
+          173,
+          27
+        ],
+        [
+          39,
+          161
+        ]
+      ],
+      "model_size_mb": 0.45
+    }
+  ]
+}
